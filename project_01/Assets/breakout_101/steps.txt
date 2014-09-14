@@ -1,0 +1,144 @@
+Creating Breakout 101
+=====================
+
+STEP 1 : Setting Up a Scene & LevelController
+- Open the empty scene by double clicking the breakout_101/step_01 scene file.
+
+- Create an empty GameObject to run your game-loop: menu > GameObject > Create Empty
+
+- Name the empty GameObject "level_controller" in the Inspector panel.
+   - You may want to add an icon gismo to make this visible in the scene-view
+    - you can do this in the Inspector by clicking the small block next to the 
+    
+- Create a new behavior script to use as a main game-loop:
+   - menu > Component > Add...
+   - Type "LevelController" in the search box and select New Script.
+   - Press Enter or click the "Create and Add" button.
+   
+- Add a directional light so we can see stuff : menu > GameObject > Create Other > Directional Light
+   
+   
+STEP 2 : Introduce Scripting
+- Double click the LevelController script - this should launch MonoDevelop IDE that ships with Unity.
+
+- Now if you add Debug.Log("start") & Debug.Log("update") to the handlers in the script.
+
+- Switch back to Unity and click the play-button(or Ctrl+P) you should see the debug messages printed 
+ - in the Console. 
+ 
+ 
+STEP 3 : Adding an Interactive Paddle
+- Create a cube : menu > GameObject > Create Other > Cube
+
+- Name the Cube game-object "paddle" in the Inspector.
+
+- Add a Rigidbody component to the paddle to allow the physics system to interact with it.
+ - Click the Add Component button in the inspector and start typing Rigidbody in the search-box.
+ - Select Rigidbody in the search results.
+ 
+- Switch off the Use Gravity property.
+
+- Switch on the Is Kinematic property - this tells the physics system not to invoke collision responses.
+
+- Use the scale tool to lengthen the cube into a paddle shape.
+
+- In MonoDevelop add a public property to reference the paddle from the LevelController.
+  - Add "public GameObject paddle;" to the LevelController class.
+  
+- Select the "level_controller" GameObject in the Hierachy panel.
+
+- Notice there's a "Paddle" slot under the Level Controller script component.
+
+- Drag the paddle GameObject from the Hierachy panel into the paddle slot of the Level Controller component 
+  in the Inspector panel.
+
+- In MonoDevelop add input checks to control the paddle's position - see example code.
+
+
+STEP 4 : Balls to the Walls
+- Add a sphere : menu > Game Object > Create Other > Sphere
+  - You can then name it "ball" if you wish
+
+- Add a Rigidbody component to the sphere as you did with the cube earlier.
+  - Now if you run the game by hitting the play button or hitting CTRL+P the ball will fall till it hits the paddle.
+  
+- Set the mass property on the Rigidbody to 1000.
+  
+- Constrain the Rigidbody to operate in 2D in the Inspector - step_04 see example scene.
+  
+- Create a physics material : menu->Assets->Create->Physics Material
+
+- Drag the physics-material into the material slots on the ball's Rigidbody.
+  - Also add this material to the paddle's Rigidbody.
+  
+- Select the physics-material in the Project view.
+
+- Set all Friction values to 0.
+
+- Set the Bounciness to 1.
+  - Now the ball will bounce on the paddle forever.
+
+- Select the paddle & duplicate it : Edit->Copy then Edit->Paste OR CTRL + D
+
+- Rename this wall and scale and position to create a wall at the top of the screen.
+
+- Repeat this to add walls to the left & right sides of the screen.
+
+
+STEP 5 : Adding Blocks
+
+- Duplicate the paddle game-object.
+
+- Name it "block".
+
+- Move it to a position for the first block.
+
+- Add a new script-component to the block or add the DieOnCollision script.
+  - If you want to add your own code you can follow the code in DieOnCollision as an example.
+
+- Drag the block GameObject from the Hierarchy view into the Project view.
+  - This stores a "Prefab" file in the project allowing the game-object, child game-objects and components to be reused.
+  - This also allows cloning/instantiating of Prefab game-objects via code at run-time.
+  
+- Now duplicate & position the block to create the breakable blocks for this level.
+
+
+STEP 6 : Resetting the Ball
+
+- Duplicate the top wall and rename it "floor".
+
+- Add public ball and floor properties to the LevelController.
+
+- Also add a private property for storing the ball's starting position when the controller starts.
+  - See example controller if you need help.
+
+- Assign the floor & ball game-object by dragging them into the appropreate slots on the LevelController in the inspector.
+
+- I've added a BallBehaviour component - you can add it to the ball game-object by dragging it onto the ball from the project view.
+  - You can rewrite this if you like, but this simply bubbles up the collision event to the LevelController.
+  
+- Add the following method to your LevelController:
+  public void onBallCollision( Collision collision )
+
+- Drag the level_controller game-object into the conroller slot on this component.
+
+- In the LevelController method onBallCollision add logic to test if the ball collided with the floor and reset to it's starting position.
+  - Also this should zero out the velocity on the ball's Rigidbody. 
+  - See example controller if you need help.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END

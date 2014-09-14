@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\breakout_101\LevelControllerExample.cs">
+    <Files>
+      <File FileName="Assets\breakout_101\steps.txt" Line="35" Column="18" />
+      <File FileName="Assets\breakout_101\LevelControllerExample.cs" Line="44" Column="3" />
+      <File FileName="Assets\breakout_101\BallBehaviour.cs" Line="10" Column="37" />
+      <File FileName="Assets\breakout_101\DieOnCollision.cs" Line="11" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="breakout_101" expanded="True">
+              <Node name="LevelControllerExample.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
