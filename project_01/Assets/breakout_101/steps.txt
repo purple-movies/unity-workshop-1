@@ -68,8 +68,8 @@ STEP 4 : Balls to the Walls
   
 - Create a physics material : menu->Assets->Create->Physics Material
 
-- Drag the physics-material into the material slots on the ball's Rigidbody.
-  - Also add this material to the paddle's Rigidbody.
+- Drag the physics-material into the material slots on the ball's Sphere Collider component.
+  - Also add this material to the paddle's Box Collider component.
   
 - Select the physics-material in the Project view.
 
@@ -105,14 +105,14 @@ STEP 5 : Adding Blocks
 
 STEP 6 : Resetting the Ball
 
-- Duplicate the top wall and rename it "floor".
+- Duplicate the top wall and rename it "floor" then position it below the paddle.
 
-- Add public ball and floor properties to the LevelController.
+- Add public ball and floor properties of type GameObject to the LevelController.
 
-- Also add a private property for storing the ball's starting position when the controller starts.
+- Also add a private Vector3 property for storing the ball's starting position when the controller starts.
   - See example controller if you need help.
 
-- Assign the floor & ball game-object by dragging them into the appropreate slots on the LevelController in the inspector.
+- Assign the floor & ball game-object by dragging them into the appropreate slots on the LevelController in the Inspector panel.
 
 - I've added a BallBehaviour component - you can add it to the ball game-object by dragging it onto the ball from the project view.
   - You can rewrite this if you like, but this simply bubbles up the collision event to the LevelController.
@@ -120,7 +120,7 @@ STEP 6 : Resetting the Ball
 - Add the following method to your LevelController:
   public void onBallCollision( Collision collision )
 
-- Drag the level_controller game-object into the conroller slot on this component.
+- Drag the level_controller game-object into the controller slot on the ball's script component.
 
 - In the LevelController method onBallCollision add logic to test if the ball collided with the floor and reset to it's starting position.
   - Also this should zero out the velocity on the ball's Rigidbody. 

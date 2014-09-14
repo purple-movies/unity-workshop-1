@@ -10,3 +10,8 @@ public class BallBehaviour : MonoBehaviour {
 		controller.onBallCollision( col );
 	}
 }
+
+//public interface LevelControllerInterface
+//{
+//	void onBallCollision( Collision collision );
+//}
