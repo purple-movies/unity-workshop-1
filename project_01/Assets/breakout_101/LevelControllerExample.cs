@@ -18,15 +18,19 @@ public class LevelControllerExample : MonoBehaviour
 
 		levelCompleted = false;
 
-		ballStartPosition = ball.transform.position;
+		if( ball )
+			ballStartPosition = ball.transform.position;
 		resetBall();
 	}
 
 	void resetBall ()
 	{
-		var startVelocity = new Vector3( 0, -10 );
-		ball.GetComponent<Rigidbody> ().velocity = startVelocity;
-		ball.transform.position = ballStartPosition;
+		var startVelocity = new Vector3( 0, 10 );
+		if( ball )
+		{
+			ball.GetComponent<Rigidbody> ().velocity = startVelocity;
+			ball.transform.position = ballStartPosition;
+		}
 	}
 
 	public void onBlockCollision( Collision Collision )
@@ -40,8 +44,6 @@ public class LevelControllerExample : MonoBehaviour
 
 	public void onBallCollision( Collision collision )
 	{
-//		Debug.Log( "collision : " + collision.gameObject );
-
 		if ( ! levelCompleted && collision.gameObject == floor )
 		{
 			resetBall ();
@@ -50,7 +52,6 @@ public class LevelControllerExample : MonoBehaviour
 
 	void Update ()
 	{
-//		Debug.Log( "update" );
 		var t = paddle.transform.position;
 
 		if ( Input.GetKey(KeyCode.LeftArrow) )

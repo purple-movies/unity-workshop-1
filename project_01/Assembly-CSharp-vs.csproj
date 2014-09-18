@@ -60,7 +60,10 @@
      <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSparks.cs" />
      <Compile Include="Assets\Detonator Explosion Framework\System\DetonatorSpray.cs" />
      <Compile Include="Assets\LevelController.cs" />
+     <Compile Include="Assets\MazeNode.cs" />
+     <Compile Include="Assets\MoveTest.cs" />
      <Compile Include="Assets\breakout_101\BallBehaviour.cs" />
+     <Compile Include="Assets\breakout_101\BallBehaviourExample.cs" />
      <Compile Include="Assets\breakout_101\DieOnCollision.cs" />
      <Compile Include="Assets\breakout_101\LevelControllerExample.cs" />
      <Compile Include="Assets\breakout_101\LevelController_S2.cs" />

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BallBehaviour : MonoBehaviour {
+public class BallBehaviourExample : MonoBehaviour {
 
-	public LevelController controller;
+	public LevelControllerExample controller;
 
 	void OnCollisionEnter( Collision col )
 	{

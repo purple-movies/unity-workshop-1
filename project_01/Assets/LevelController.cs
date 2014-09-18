@@ -12,4 +12,9 @@ public class LevelController : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void onBallCollision( Collision collision )
+	{
+
+	}
 }
